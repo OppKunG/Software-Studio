@@ -1,0 +1,553 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>7 Wonders of the World</title>
+</head>
+<style>
+    * {
+        box-sizing: border-box;
+    }
+
+
+    body {
+        background-color: sandybrown;
+        margin: 0;
+    }
+
+    .header img{
+    /* background-image: url("https://www.exoticca.com/uk/magazine/wp-content/uploads/2021/05/930X360_Image-of-the-blog_ING.jpg"); */
+    height: 150px;
+        width: 100%;
+        text-align: center;
+        object-fit: cover;
+    }
+
+    nav {
+        position: sticky;
+        position: -webkit-sticky;
+        overflow: hidden;
+        background-color: saddlebrown;
+        width: 100%;
+        top: 0;
+    }
+
+    ul {
+        list-style-type: none;
+        margin: 0;
+        padding: 0;
+    }
+
+    li {
+        float: left;
+        font-size: larger;
+    }
+
+    li a,
+    .dropbtn {
+        display: inline-block;
+        color: white;
+        text-align: center;
+        padding: 14px 16px;
+        text-decoration: none;
+    }
+
+    li a:hover,
+    .dropdown:hover .dropbtn {
+        background-color: #111;
+    }
+
+    li.dropdown {
+        display: inline-block;
+    }
+
+    .dropdown-content {
+        display: none;
+        position: fixed;
+        /* top: 0px; */
+
+        background-color: #f9f9f9;
+        min-width: 160px;
+        box-shadow: 0px 8px 16px 0px rgba(0, 0, 0, 0.2);
+        z-index: 250;
+    }
+
+    .dropdown-content a {
+        color: black;
+        padding: 12px 16px;
+        text-decoration: none;
+        display: block;
+        text-align: left;
+    }
+
+    .dropdown-content a:hover {
+        background-color: #f1f1f1;
+    }
+
+    .dropdown:hover .dropdown-content {
+        display: block;
+    }
+
+    .about {
+        float: right;
+    }
+
+    .card {
+        background-color: wheat;
+        padding: 20px;
+        margin-top: 20px;
+    }
+
+    h2 {
+        text-align: center;
+    }
+
+
+    img.image {
+        display: block;
+        margin-left: auto;
+        margin-right: auto;
+        width: 50%;
+        border-radius: 8px
+    }
+
+    .gallery {
+        border: 1px solid #ccc;
+        border-radius: 8px
+    }
+
+    .gallery:hover {
+        border: 1px solid #777;
+    }
+
+    .gallery img {
+        width: 100%;
+        height: auto;
+        border-top-left-radius: 8px;
+        border-top-right-radius: 8px;
+    }
+
+    .desc {
+        padding: 15px;
+        text-align: center;
+    }
+
+    .Chichen_Itza {
+        border-radius: 8px;
+        background: olivedrab;
+        color: white;
+    }
+
+    .Cristo_Redentor {
+        border-radius: 8px;
+        background: dodgerblue;
+        color: white;
+    }
+
+    .Great_Wall {
+        border-radius: 8px;
+        background: darkgreen;
+        color: white;
+    }
+
+    .Machu_Picchu {
+        border-radius: 8px;
+        background: blue;
+        color: white;
+    }
+
+    .Petra {
+        border-radius: 8px;
+        background: coral;
+        color: white;
+    }
+
+    .Colosseum {
+        border-radius: 8px;
+        background: dimgray;
+        color: white;
+    }
+
+    .Taj_Mahal {
+        border-radius: 8px;
+        background: chocolate;
+        color: white;
+    }
+
+    .responsive {
+        padding: 6px 6px;
+        float: left;
+        width: 25%;
+    }
+
+    @media only screen and (max-width: 1080px) {
+        .responsive {
+            width: 40%;
+            margin: 6px 0;
+        }
+    }
+
+    @media only screen and (max-width: 800px) {
+
+        ul li.about,
+        ul li,
+        ul li a.dropbtn {
+            float: none;
+        }
+
+        nav {
+            position: initial;
+        }
+
+        img.image {
+            width: 90%;
+        }
+
+        .responsive {
+            width: 100%;
+        }
+    }
+
+    .clearfix:after {
+        content: "";
+        display: table;
+        clear: both;
+    }
+
+    footer {
+        text-align: center;
+    }
+</style>
+</head>
+
+<body>
+
+    <div class="header">
+        <img src="https://www.exoticca.com/uk/magazine/wp-content/uploads/2021/05/930X360_Image-of-the-blog_ING.jpg"
+            alt="pic" width="600" height="400" >
+    </div>
+
+    <nav class="navbar">
+        <ul>
+            <li><a href="#">Home</a></li>
+            <li><a href="#intro">Overview</a></li>
+            <li class="dropdown">
+                <a id="test-test" href="javascript:void(0)" class="dropbtn">Places</a>
+                <div class="dropdown-content" aria-labelledby="test-test">
+                    <a href="#place1">ชิเชน อิตซา (Chichen Itza)</a>
+                    <a href="#place2">คริชตู เรเดงโตร์ (Cristo Redentor)</a>
+                    <a href="#place3">กำแพงเมืองจีน (Great Wall of China)</a>
+                    <a href="#place4">มาชูปิกชู (Machu Picchu)</a>
+                    <a href="#place5">นครเพตรา (Petra)</a>
+                    <a href="#place6">โคลอสเซียม (Colosseum)</a>
+                    <a href="#place7">ทัชมาฮาล (Taj Mahal)</a>
+                </div>
+            </li>
+            <!-- <li class="about"><a href="#about">About</a> -->
+            </li>
+        </ul>
+    </nav>
+
+
+    <div class="card">
+        <h2>7 สิ่งมหัศจรรย์ของโลก ยุคใหม่ ยุคกลาง ยุคเก่า มรดกโลกที่ต้องไปเยือนสักครั้ง</h2>
+        <img class="image"
+            src="https://cms.dmpcdn.com/travel/2021/06/11/db619c70-ca94-11eb-bc4a-3f6ef41753d9_original.jpg" alt="pic"
+            height="300" width="500"> </img>
+        <p>&nbsp;&nbsp;&nbsp; 7 สิ่งมหัศจรรย์ของโลก หรือ 7 Wonders คือ สิ่งก่อสร้างที่มีความยิ่งใหญ่
+            และโดดเด่นที่สุดในโลกซึ่งจะมีทั้งหมด 7 แห่งด้วยกัน และมีมานานหลายยุคหลายสมัยแล้ว
+            ซึ่งส่วนใหญ่สถานที่เหล่านั้นจะมีเรื่องราวที่เกี่ยวโยงกับประวัติศาสตร์สำคัญของโลกอีกด้วย
+            และนอกจากสิ่งมหัศจรรย์ยุคใหม่แล้ว เรามาเท้าความไปถึงสิ่งมหัศจรรย์ของโลกในยุคก่อนกันด้วยว่า
+            มีที่ไหนบ้าง</p>
+    </div>
+
+    <!-- --------------------------------------------------------------------------->
+
+    <div class="card">
+        <div id="intro"><br><br>
+            <h2>7 สิ่งมหัศจรรย์ของโลกยุคใหม่</h2>
+            <p>&nbsp;&nbsp;&nbsp;New 7 Wonders of the World หรือ สิ่มหัศจรรย์ของโลก ยุคใหม่
+                โดยองค์กรของสวิตเซอร์แลนด์
+                The New Open World Corporation (NOWC) สรุปสุดท้ายได้ประกาศเมื่อวันที่ 7 กรกฎาคม พ.ศ.2550
+                ที่กรุงลิสบอน
+                ประเทศโปรตุเกส ได้แก่สถานที่ต่างๆ ดังนี้<br></p>
+        </div>
+        <div class="responsive">
+            <div class="gallery">
+                <div class="Chichen_Itza">
+                    <a href="#place1">
+                        <img src="https://cms.dmpcdn.com/travel/2020/03/31/6383b0e0-730f-11ea-a94d-8791bb18fd5b_original.JPG"
+                            alt="Chichen Itza" width="600" height="400">
+                    </a>
+                    <div class="desc"><b>ชิเชน อิตซา<br>Chichen Itza</b></div>
+                </div>
+            </div>
+        </div>
+
+        <div class="responsive">
+            <div class="gallery">
+                <div class="Cristo_Redentor">
+                    <a href="#place2">
+                        <img src="https://cms.dmpcdn.com/travel/2020/03/31/0c574ba0-7310-11ea-b8a2-09037777d4af_original.JPG"
+                            alt="Cristo Redentor" width="600" height="400">
+                    </a>
+                    <div class="desc"><b>คริชตู เรเดงโตร์<br>Cristo Redentor</b></div>
+                </div>
+            </div>
+        </div>
+
+        <div class="responsive">
+            <div class="gallery">
+                <div class="Great_Wall">
+                    <a href="#place3">
+                        <img src="https://cms.dmpcdn.com/travel/2020/03/31/4b071dd0-7310-11ea-b8a2-09037777d4af_original.JPG"
+                            alt="Great Wall of China" width="600" height="400">
+                    </a>
+                    <div class="desc"><b>กำแพงเมืองจีน<br>Great Wall of China</b></div>
+                </div>
+            </div>
+        </div>
+
+        <div class="responsive">
+            <div class="gallery">
+                <div class="Machu_Picchu">
+                    <a href="#place4">
+                        <img src="https://cms.dmpcdn.com/travel/2020/03/31/a6d2b840-7310-11ea-a7cd-dd316e61efc7_original.JPG"
+                            alt="Machu Picchu" width="600" height="400">
+                    </a>
+                    <div class="desc"><b>มาชูปิกชู<br>Machu Picchu</b></div>
+                </div>
+            </div>
+        </div>
+
+        <div class="clearfix"></div>
+
+        <div class="responsive">
+            <div class="gallery">
+                <div class="Petra">
+                    <a href="#place5">
+                        <img src="https://cms.dmpcdn.com/travel/2020/03/31/fc0af930-7310-11ea-b8a2-09037777d4af_original.JPG"
+                            alt="Petra" width="600" height="400">
+                    </a>
+                    <div class="desc"><b>นครเพตรา<br>Petra</b></div>
+                </div>
+            </div>
+        </div>
+
+        <div class="responsive">
+            <div class="gallery">
+                <div class="Colosseum">
+                    <a href="#place6">
+                        <img src="https://cms.dmpcdn.com/travel/2020/03/31/4bc4fa20-7311-11ea-a7cd-dd316e61efc7_original.JPG"
+                            alt="Colosseum" width="600" height="400">
+                    </a>
+                    <div class="desc"><b>โคลอสเซียม<br>Colosseum</b></div>
+                </div>
+            </div>
+        </div>
+
+        <div class="responsive">
+            <div class="gallery">
+                <div class="Taj_Mahal">
+                    <a href="#place7">
+                        <img src="https://cms.dmpcdn.com/travel/2020/03/31/72680780-7311-11ea-a7cd-dd316e61efc7_original.JPG"
+                            alt="Taj Mahal" width="600" height="400">
+                    </a>
+                    <div class="desc"><b>ทัชมาฮาล<br>Taj Mahal</b></div>
+                </div>
+            </div>
+        </div>
+
+        <div class="clearfix"></div>
+
+    </div>
+
+    <!-- --------------------------------------------------------------------------->
+
+    <div class="card">
+        <a id="place1"></a><br><br>
+        <h2>1. ชิเชน อิตซา <br> Chichen Itza : เม็กซิโก</h2>
+        <img class="image"
+            src="https://cms.dmpcdn.com/travel/2020/03/31/63842610-730f-11ea-b8a2-09037777d4af_original.JPG" alt="pic"
+            height="300" width="500"> </img>
+        <p>
+            &nbsp;&nbsp;&nbsp; ชิเชนอิตซา เป็นภาษามายา แปลว่า ต้นทางแห่งความสุขสบายของประชาชน
+            ตั้งอยู่ทางภาคตะวันออกเฉียงใต้ของประเทศเม็กซิโก
+            เป็นแหล่งโบราณคดีที่สร้างขึ้นโดยชาวมายันซึ่งสร้างขึ้นเพื่อเป็นอนุสรณ์ของเทพเจ้า<br>
+        </p>
+        <img class="image"
+            src="https://cms.dmpcdn.com/travel/2020/03/31/6383b0e0-730f-11ea-a94d-8791bb18fd5b_original.JPG" alt="pic"
+            height="300" width="500"> </img>
+        <p>
+            &nbsp;&nbsp;&nbsp; ชิเชนอิตซา มีรูปทรงเป็นสามเหลี่ยมลดขั้นเป็นชั้นๆ ดูไปดูมาคล้ายๆ กับพีระมิดที่อิยิปต์
+            แต่การสร้าง และวัสดุนั้นต่างออกไป ที่นี่มีพื้นที่ราว 6.4 ตารางกิโลเมตร วิหารที่ใหญ่สุดมีชื่อว่า
+            วิหารแห่งนักรบ สร้างขึ้นในคริสต์ศตวรรษที่ 12 หลังจากสร้างวิหารเก่าแห่งชักโมล
+            ตรงกลางสร้างเป็นปราสาทเหลี่ยมทึบสูงขึ้นไป ใช้เป็นที่ทำพิธีสังเวยเทพเจ้าโดยใช้เด็กสาวโยนลงไปถวายเทพเจ้า ณ
+            ที่นั้น นอกจากนี้ในส่วนของพีระมิดแห่งเทพเจ้าคูคุลคาน ซึ่งถือเป็นพีระมิดแห่งสุดท้าย
+            และเป็นพีระมิดที่กล่าวได้ว่ายิ่งใหญ่ที่สุดของอารยธรรมมายาด้วย<br>
+        </p>
+    </div>
+
+    <!-- --------------------------------------------------------------------------->
+
+    <div class="card">
+        <a id="place2"></a><br><br>
+        <h2>2. คริชตู เรเดงโตร์ <br> Cristo Redentor หรือ Christ the Redeemer : บราซิล</h2>
+        <img class="image"
+            src="https://cms.dmpcdn.com/travel/2020/03/31/0c574ba0-7310-11ea-b8a2-09037777d4af_original.JPG" alt="pic"
+            height="300" width="500"> </img>
+        <p>
+            &nbsp;&nbsp;&nbsp; รูปปั้นพระเยซูคริสต์ ตั้งอยู่ที่ยอดเขากอร์โกวาดู ประเทศบราซิล
+            นอกจากจะเป็นสิ่งก่อสร้างที่มีความหมายถึงศรัทธาที่ยิ่งใหญ่ ยังเป็นสัญลักษณ์ที่ทำให้เมือง ริโอ เดอ จาเนโร
+            โด่งดังไปทั่วโลกอีกด้วย<br>
+        </p>
+        <img class="image"
+            src="https://cms.dmpcdn.com/travel/2020/03/31/0c55c500-7310-11ea-a7cd-dd316e61efc7_original.JPG" alt="pic"
+            height="300" width="500"> </img>
+        <p>
+            &nbsp;&nbsp;&nbsp; รูปปั้นพระคริสต์นี้มีความสูงถึง 38 เมตร ได้รับการออกแบบโดยเอโตร์ ดา ซิลวา กอชตา
+            ชาวบราซิล
+            และสร้างโดยปอล ลันดอฟสกี ประติมากรชาวฝรั่งเศสถึง 5 ปีด้วยกัน
+            ที่นี่ถือเป็นอนุสาวรีย์ที่มีชื่อเสียงมากที่สุดแห่งหนึ่งของโลก
+            และเป็นที่ยึดเหนี่ยวทางจิตใจของชาวบราซิลอีกด้วย
+            ทำให้ในแต่ละปีจะมีนักท่องเที่ยวเดินทางมายังสถานที่แห่งนี้ราว
+            1.8 ล้านคนทีเดียว<br>
+        </p>
+    </div>
+
+    <!-- --------------------------------------------------------------------------->
+
+    <div class="card">
+        <a id="place3"></a><br><br>
+        <h2>3. กำแพงเมืองจีน <br> Great Wall of China : จีน</h2>
+        <img class="image"
+            src="https://cms.dmpcdn.com/travel/2020/03/31/4b071dd0-7310-11ea-b8a2-09037777d4af_original.JPG" alt="pic"
+            height="300" width="500"> </img>
+        <p>
+            &nbsp;&nbsp;&nbsp; กำแพงเมืองจีน นี้สร้างขึ้นจีนสมัยสมัยราชวงศ์ฉิน เพื่อป้องกันการรุกรานจากชนเผ่ามองโกล
+            และเติร์กในอดีต และหลังจากนั้นยังมีการสร้างกำแพงต่ออีกหลายครั้งด้วยกัน มีความยาวทั้งสิ้นกว่า 21,196.18
+            กิโลเมตร ครอบคลุมพื้นที่ 15 มณฑลทั่วประเทศ
+            ถือเป็นสิ่งก่อสร้างโดยฝีมือมนุษย์ที่ยาวที่สุดในโลกเท่าที่เคยมีมา<br>
+        </p>
+        <p>
+            &nbsp;&nbsp;&nbsp; ความยิ่งใหญ่ และประวัติศาสตร์อันยาวนานนี่เอง ทำให้กำแพงเมืองจีนนอกจากจะเป็น 1 ใน 7
+            มหัศจรรย์ของโลกแล้ว ยังเป็น 1 ในมรดกโลก ที่องค์กร UNESCO คัดเลือกอีกด้วย<br>
+        </p>
+        <img class="image"
+            src="https://cms.dmpcdn.com/travel/2020/03/31/4b0d1140-7310-11ea-a7cd-dd316e61efc7_original.JPG" alt="pic"
+            height="300" width="500"> </img>
+    </div>
+
+    <!-- --------------------------------------------------------------------------->
+
+    <div class="card">
+        <a id="place4"></a><br><br>
+        <h2>4. มาชูปิกชู <br> Machu Picchu : เปรู</h2>
+        <img class="image"
+            src="https://cms.dmpcdn.com/travel/2020/03/31/a6d2b840-7310-11ea-a7cd-dd316e61efc7_original.JPG" alt="pic"
+            height="300" width="500"> </img>
+        <p>
+            &nbsp;&nbsp;&nbsp; เมืองสาบสูญแห่งอินคา หรือ มาชูปิกชู แห่งนี้ เป็นซากอารยธรรมโบราณของชาวอินคา
+            ตั้งอยู่บนเทือกเขาสูงในประเทศเปรู อยู่สูงกว่าระดับน้ำทะเลถึง 2,350 เมตร ที่ตั้งของเมืองนี้ค่อนข้างกันดาร
+            ยากที่จะเข้าถึง เพราะตั้งอยู่บนที่ราบสูงแอนดิส ลึกเข้าไปในป่าอเมซอน และอยู่เหนือแม่น้ำอุรุบัมบา<br>
+        </p>
+        <p>
+            &nbsp;&nbsp;&nbsp; หลังจากอาณาจักรอินคาล่มสลายจากการพ่ายแพ้สงครามให้กับชาวสเปน และโรคระบาด
+            เมืองแห่งนี้ก็ได้หายสาบสูญไปกว่า 3 ศตวรรษ และได้ถูกค้นพบโดยนักโบราณคดีชาวอเมริกัน ไฮแรม บิงแฮม ในปี
+            ค.ศ.1911<br>
+        </p>
+        <img class="image"
+            src="https://cms.dmpcdn.com/travel/2020/03/31/a6d6afe0-7310-11ea-b8a2-09037777d4af_original.JPG" alt="pic"
+            height="300" width="500"> </img>
+        <p>&nbsp;&nbsp;&nbsp; นอกจากนี้ มาชูปิกชู เป็นหลักฐานที่สำคัญของจักรวรรดิอินคา องค์กร UNESCO จึงได้กำหนดให้
+            มาชูปิกชูเป็นมรดกโลก โดยเป็นสถานที่ท่องเที่ยวที่คนนิยมไปศึกษาประวัติศาสตร์<br></p>
+    </div>
+
+    <!-- --------------------------------------------------------------------------->
+
+    <div class="card">
+        <a id="place5"></a><br><br>
+        <h2>5. นครเพตรา <br> Petra : จอร์แดน</h2>
+        <img class="image"
+            src="https://cms.dmpcdn.com/travel/2020/03/31/fc0af930-7310-11ea-b8a2-09037777d4af_original.JPG" alt="pic"
+            height="300" width="500"> </img>
+        <p>
+            &nbsp;&nbsp;&nbsp; นครเพตรา ซ่อนตัวอย่างลึกลับใน หุบเขาวาดี มูซา หุบเขาที่ตั้งอยู่ระหว่างทะเลสาบเดดซี
+            กับทะเลอัคบาในประเทศจอร์แดน นครนี้ในสมัยโบราณนั้นเป็นนครแห่งการค้าขนาดใหญ่
+            เป็นเมืองหลวงของชนเผ่านาบาเชียนซึ่งเป็นชนเผ่าที่อาศัยอยู่ทางตอนใต้ของประเทศจอร์แดนในสมัยก่อน
+            และถูกละทิ้งเป็นเวลานานกว่า 700 ปี ซึ่งได้ถูกค้นพบโดยนักสำรวจชาวสวิตเซอร์แลนด์ โจฮันน์ ลุควิก
+            เบิร์กฮาร์ท
+            ในปี ค.ศ. 1812<br>
+        </p>
+        <img class="image"
+            src="https://cms.dmpcdn.com/travel/2020/03/31/fc07ebf0-7310-11ea-a7cd-dd316e61efc7_original.JPG" alt="pic"
+            height="300" width="500"> </img>
+        <p>&nbsp;&nbsp;&nbsp; ชาวนาบาเชียนสร้างเมืองแห่งนี้โดยใช้วิธีการแกะสลักหินให้เป็นช่องอุโมงค์
+            โรงละครของเมืองแห่งนี้ซึ่งเป็นต้นแบบของโรงละครแบบกรีก-โรมัน ส่วนหน้าของวิหารเอล เดียร์ ซึ่งสูง 42 เมตร
+            ในเมืองแห่งนี้เป็นตัวอย่างที่ดีอีกแห่งหนึ่งของสถาปัตยกรรมแบบกรีกโบราณ
+            ทำให้นครเปตราได้รับลงทะเบียนจากองค์กร
+            UNESCO ให้เป็นมรดกโลกเมื่อปี พ.ศ. 2528<br></p>
+    </div>
+
+    <!-- --------------------------------------------------------------------------->
+
+    <div class="card">
+        <a id="place6"></a><br><br>
+        <h2>6. โคลอสเซียม <br> Colosseum : อิตาลี</h2>
+        <img class="image"
+            src="https://cms.dmpcdn.com/travel/2020/03/31/4bc4fa20-7311-11ea-a7cd-dd316e61efc7_original.JPG" alt="pic"
+            height="300" width="500"> </img>
+        <p>
+            &nbsp;&nbsp;&nbsp; โคลอสเซียม เป็นสนามกีฬาโบราณที่ยิ่งใหญ่ที่สุดในขณะนั้น
+            สนามกีฬากลางแจ้งขนาดใหญ่ตั้งอยู่ใจกลางกรุงโรมนี้ เริ่มสร้างขึ้นใน สมัยจักรพรรดิเวสเปเซียน
+            แห่งจักรวรรดิโรมัน
+            และสร้างเสร็จในสมัยของจักรพรรดิไททัส ใช้เวลาการก่อสร้างถึง 10 ปีด้วยกัน<br>
+        </p>
+        <p>
+            &nbsp;&nbsp;&nbsp; ที่แห่งนี้มีห้องสำหรับขังทาส นักโทษ และสัตว์ดุร้าย เช่น สิงโต เสือ
+            โดยจะให้ทาสสู้กันเองจนกว่าจะเหลือผู้รอดชีวิตเพียงคนเดียว หรือให้สู้กับสิงโต
+            เพื่อเป็นความบันเทิงให้แก่ผู้ชม
+            ผู้ที่รอดตายจากการต่อสู้จึงจะได้รับอิสรภาพ<br>
+        </p>
+        <img class="image"
+            src="https://cms.dmpcdn.com/travel/2020/03/31/4bc80760-7311-11ea-b8a2-09037777d4af_original.JPG" alt="pic"
+            height="300" width="500"> </img>
+        <p>&nbsp;&nbsp;&nbsp; โคลอสเซียม เป็นรูปวงกลมก่อด้วยอิฐ และหินทราย วัดโดยรอบได้ประมาณ 527 เมตร สูง 57 เมตร
+            สามารถจุผู้ชมได้ประมาณ 50,000 คน นอกจากนี้ยังมีการออกแบบอย่างชาญฉลาด
+            โดยสร้างให้สนามกีฬามีลักษณะเป็นรูปวงรี
+            เพื่อให้ผู้ชมรู้สึกเข้าใกล้นักกีฬา
+            และมีการออกแบบทางระบายน้ำเพื่อไม่ให้น้ำท่วมขังในสนามขณะเกิดฝนตกอีกด้วย
+            โคลอสเซียมจึงกลายเป็นต้นแบบของสนามกีฬาต่างๆ ในปัจจุบัน<br></p>
+    </div>
+
+    <!-- --------------------------------------------------------------------------->
+
+    <div class="card">
+        <a id="place7"></a><br><br>
+        <h2>7. ทัชมาฮาล <br> Taj Mahal : อินเดีย</h2>
+        <img class="image"
+            src="https://cms.dmpcdn.com/travel/2020/03/31/72680780-7311-11ea-a7cd-dd316e61efc7_original.JPG" alt="pic"
+            height="300" width="500"> </img>
+        <p>
+            &nbsp;&nbsp;&nbsp; สุสานหินอ่อน ทัชมาฮาล แห่งนี้
+            ผู้คนเชื่อว่าเป็นสถาปัตยกรรมแห่งความรักที่สวยที่สุดในโลกที่สร้างขึ้นโดยสมเด็จพระจักรพรรดิแห่งจักรวรรดิโมกุล
+            ผู้มีรักมั่นคงต่อพระมเหสีของพระองค์<br>
+        </p>
+        <img class="image"
+            src="https://cms.dmpcdn.com/travel/2020/03/31/72645e00-7311-11ea-a7cd-dd316e61efc7_original.JPG" alt="pic"
+            height="300" width="500"> </img>
+        <p>&nbsp;&nbsp;&nbsp; ทัชมาฮาล ตั้งอยู่ในสวนริมฝั่งแม่น้ำยมุนา ใน เมืองอัครา ส่วนที่มีชื่อเสียงที่สุด คือ
+            หลุมศพของพระนางมุมตัซ มาฮาล ซึ่งถูกสร้างด้วยหินอ่อนสีขาว ศิลาแลง ประดับลวดลายเครื่องเพชร พลอย หิน
+            โมราและเครื่องประดับจากมิตรประเทศ ได้รับคำรับรองว่าสร้างขึ้นด้วยสัดส่วนที่วิจิตรและงดงามที่สุด
+            รวมถึงยังได้รับการยกย่องว่าเป็นตัวอย่างชั้นเลิศของสถาปัตยกรรมมุฆัลในอินเดีย
+            ที่นี่ต้องใช้แรงงานในการก่อสร้างถึง 20,000 คน และใช้เวลาก่อสร้างถึง 20 ปี<br></p>
+    </div>
+
+    <!-- --------------------------------------------------------------------------->
+
+    <footer><b>Created by 63010126 Jakarin Chonchumrus. &nbsp;&nbsp;&nbsp; All rights reserved & copyright 2023.</b>
+    </footer>
+    </dd>
+</body>
+
+</html>
