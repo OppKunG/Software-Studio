@@ -1,0 +1,220 @@
+<!DOCTYPE html>
+<html>
+
+<head></head>
+
+<body>
+    <div id="maincontainer"></div>
+    <script>
+        // Main
+        var main = document.getElementById('maincontainer')
+
+        // Header
+        var header = document.createElement('h2')
+        main.appendChild(header)
+
+        // Title
+        var title = document.createTextNode('Exercise 04: JavaScript&DOM')
+        header.appendChild(title)
+
+        // Date
+        var button = document.createElement('input')
+        button.setAttribute('type', 'button')
+        button.setAttribute('value', 'Click me to display Date and Time')
+
+        var date_state = 0
+        button.addEventListener('click', function date() {
+            if (date_state == 0) {
+                button.style.top = '0'
+                button.style.right = '0'
+                button.style.position = 'fixed'
+
+                if (typeof (worker) == 'undefined')
+                    worker = new Worker('WebWorker.js')
+
+                worker.onmessage = function (msg) {
+                    console.log(msg.data)
+                    switch (msg.data) {
+                        case 1:
+                            button.style.background = 'lime'
+                            button.style.color = 'hotpink'
+                            button.setAttribute('value', Date())
+                            break;
+
+                        case 2:
+                            button.style.background = 'mistyrose'
+                            button.style.color = 'teal'
+                            button.setAttribute('value', Date())
+                            break;
+
+                        case 3:
+                            button.style.background = 'blue'
+                            button.style.color = 'mistyrose'
+                            button.setAttribute('value', Date())
+                            break;
+
+                        case 4:
+                            button.style.background = 'green'
+                            button.style.color = 'lightsteelblue'
+                            button.setAttribute('value', Date())
+                            break;
+
+                        case 5:
+                            button.style.background = 'red'
+                            button.style.color = 'aqua'
+                            button.setAttribute('value', Date())
+                            break;
+
+                        case 0:
+                            button.style.background = 'deepskyblue'
+                            button.style.color = 'red'
+                            button.setAttribute('value', Date())
+                            break;
+                    }
+                }
+                date_state = 1
+            }
+            else {
+                button.style.position = 'relative'
+                worker.terminate()
+                worker = undefined
+                date_state = 0
+            }
+        })
+        main.appendChild(button)
+
+        // Line_Break
+        var br = document.createElement('br')
+        main.appendChild(br)
+
+        var br2 = br.cloneNode()
+        main.appendChild(br2)
+
+        var br3 = br.cloneNode()
+        main.appendChild(br3)
+
+        // Personal_Info_Title
+        var info = document.createElement('a')
+        info.setAttribute('href', '#')
+        info.style.color = 'plum'
+
+        var info_title = document.createTextNode('Personal Info')
+        info.appendChild(info_title)
+
+        info.addEventListener('mouseover', function mouse_over() {
+            info.style.background = 'yellow'
+            info.style.color = 'mediumblue'
+        })
+
+        info, addEventListener('mouseout', function mouse_out() {
+            info.style.background = 'white'
+            info.style.color = 'plum'
+        })
+        main.appendChild(info)
+
+        // Personal_Info
+        var order = document.createElement('ul')
+        var list1 = document.createElement('li')
+        var item1 = document.createTextNode('Jakarin Chonchumrus, ID:63010126')
+        list1.appendChild(item1)
+        order.appendChild(list1)
+
+        var list2 = document.createElement('li')
+        var item2 = document.createTextNode('Subject: Software Studio')
+        list2.appendChild(item2)
+        order.appendChild(list2)
+
+        var list3 = document.createElement('li')
+        var item3 = document.createTextNode('Semester: 2/65')
+        list3.appendChild(item3)
+        order.appendChild(list3)
+
+        var display_info = 0
+        info.addEventListener('click', function on_click() {
+            if (display_info == 0) {
+                main.appendChild(order)
+                display_info = 1
+            }
+            else {
+                order.remove()
+                display_info = 0
+            }
+        })
+
+        // Snapshot
+        var body = document.querySelector('body')
+        var content = document.createElement('div')
+        body.appendChild(content)
+
+        var snapshot = document.createElement('h1')
+        content.appendChild(snapshot)
+        var snapshot_title = document.createTextNode('Snapshots')
+        snapshot.appendChild(snapshot_title)
+
+        var pic_order = document.createElement('ul')
+        content.appendChild(pic_order)
+
+        // Fireworks
+        var pic_list1 = document.createElement('li')
+        var pic1 = document.createElement('a')
+        pic1.setAttribute('href', 'https://files.selecthealth.cloud/api/public/content/221575-Watching_fireworks_facebook_sm.jpg')
+        pic1.setAttribute('onclick', 'return false')
+        pic1.style.color = 'blue'
+        pic1.addEventListener('click', function pic1_href() {
+            image.setAttribute('src', pic1.href)
+        })
+        var pic_text1 = document.createTextNode('Fireworks')
+        pic1.appendChild(pic_text1)
+        pic_list1.appendChild(pic1)
+        pic_order.appendChild(pic_list1)
+
+        // Chest
+        var pic_list2 = document.createElement('li')
+        pic_order.appendChild(pic_list2)
+        var pic2 = document.createElement('a')
+        pic2.setAttribute('href', 'https://cdn2.vectorstock.com/i/1000x1000/39/36/premium-quality-product-golden-label-design-vector-20013936.jpg')
+        pic2.setAttribute('onclick', 'return false')
+        pic2.style.color = 'blue'
+        pic2.addEventListener('click', function pic2_href() {
+            image.setAttribute('src', pic2.href)
+        })
+        var pic_text2 = document.createTextNode('Crest')
+        pic2.appendChild(pic_text2)
+        pic_list2.appendChild(pic2)
+
+        // Action
+        var pic_list3 = document.createElement('li')
+        pic_order.appendChild(pic_list3)
+        var pic3 = document.createElement('a')
+        pic3.setAttribute('href', 'https://cdn.fstoppers.com/styles/large-16-9/s3/wp-content/uploads/2013/02/044-as-Smart-Object-1.jpg')
+        pic3.setAttribute('onclick', 'return false')
+        pic3.style.color = 'blue'
+        pic3.addEventListener('click', function pic3_href() {
+            image.setAttribute('src', pic3.href)
+        })
+        var pic_text3 = document.createTextNode('Action')
+        pic3.appendChild(pic_text3)
+        pic_list3.appendChild(pic3)
+
+        // Buffalo
+        var pic_list4 = document.createElement('li')
+        pic_order.appendChild(pic_list4)
+        var pic4 = document.createElement('a')
+        pic4.setAttribute('href', 'https://www.awf.org/sites/default/files/SpeciesPage_AfricanBuffalo01_Hero.jpg')
+        pic4.setAttribute('onclick', 'return false')
+        pic4.style.color = 'blue'
+        pic4.addEventListener('click', function pic4_href() {
+            image.setAttribute('src', pic4.href)
+        })
+        var pic_text4 = document.createTextNode('Buffalo')
+        pic4.appendChild(pic_text4)
+        pic_list4.appendChild(pic4)
+
+        var image = document.createElement('img')
+        image.setAttribute('src', 'https://sv1.picz.in.th/images/2023/02/22/Ly4yNN.jpg')
+        image.width = 595
+        content.appendChild(image)
+    </script>
+</body>
+
+</html>
